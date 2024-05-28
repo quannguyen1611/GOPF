@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GlobalPainFellowship</title>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-wd9SddxKHW6q5WO3KCL5HpI8vaMG6CAdJzokWzoZBAe+MMydMRe2xLU3ElI4tNqB" crossorigin="anonymous">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body{
+                margin: 0;
+                font-family: 'Arial', sans-serif;
+                color:rgb(0, 0, 0);
+                width: 100%;
+            }
+            .whole {
+                padding-top: 0px;
+            }
+            /* Header and Navigation Bar */
+            .schoolHeader {
+                display: flex;
+                background-color: #972222;
+                height: 40px;
+                align-items: center;
+                justify-content: center;
+                color: #fcb900;
+                font-size: 18px; 
+            }
+            header {
+                display: flex;
+                background-color: white;
+                height: 100px;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0px 70px;
+            }
+            .logo {
+                width: 200px;
+                height: auto;
+            }
+            .nav a {
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                font-weight: 300;
+                font-size: 17px;
+            }
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+            .dropdown .dropbtn {
+                border: none;
+                outline: none;
+                padding: 14px 16px;
+                background-color: inherit;
+                margin: 0;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                border-radius: 10px;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            .dropdown-content button {
+                display: block;
+                width: 100%;
+                background-color: #f4f4f4;
+                color: black;
+                padding: 12px 16px;
+                text-align: left;
+                border: none;
+                text-decoration: none;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                border-bottom: 1px solid #ddd;
+            }
+            .dropdown-content button:hover {
+                background-color: #ddd;
+            }
+            .dropdown-content button a {
+                color: black;
+                text-decoration: none;
+                display: block;
+                width: 100%;
+            }
+            .nav a:hover, .dropdown:hover .dropbtn {
+                color: #f6782b;
+            }
+            /* Body */
+            .faculty-info {
+                display: flex;
+                align-items: center;
+                background-color: #f4f4f4;
+                padding: 20px;
+                margin: 20px 70px;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .faculty-photo {
+                flex: 0 0 200px;
+                margin-right: 20px;
+            }
+            .faculty-photo img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+            .faculty-details {
+                flex: 1;
+            }
+            .faculty-details h2 {
+                color: #1848C2;
+                margin: 0;
+            }
+            .faculty-details p {
+                margin: 5px 0;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body> 
+        <div style="background-color: rgb(255, 255, 255);" class="whole">
+        <!--Header and navigation bar-->
+        <div class = "schoolHeader">
+            <p >University of Minnesota</p>
+        </div>
+        <header>
+            <div>
+                <img src="photos/GOPFlogo.png" alt="Logo" class="logo">
+            </div>
+            <nav class="nav">
+                <div class="dropdown">
+                    <button class="dropbtn" id="homeButton"><a href="home.html" onclick="toHome()">Home</a></li></button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="Program.html" onclick="toProgram()">Program</a></li></button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="NewsAndEvents.html" onclick="toNewsAndEvents()">News & Events</a></li></button>
+                    <div class="dropdown-content">
+                        <button><a href="Testimonials.html">Testimonials</a></button>
+                        <button><a href="Graduates.html">Graduates</a></button>
+                        <button><a href="Videos.html">Videos</a></button>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn" style="text-decoration: underline;"><a href="Faculty.html" onclick="toFaculty()">Faculty</a></li></button>
+                </div>
+            </nav>
+        </header>
+        <!-- Body -->
+        <div class="faculty-info">
+            <div class="faculty-photo">
+                <img src="photos/faculty/RatanBanik.jpeg" alt="Ratan K. Banik">
+            </div>
+            <div class="faculty-details">
+                <h2>Ratan K. Banik, MD, PhD</h2>
+                <p>Department of Anesthesiology</p>
+                <p>University of Minnesota</p>
+                <p>Minneapolis, USA</p>
+            </div>
+        </div>
+        <div class="faculty-info">
+            <div class="faculty-photo">
+                <img src="photos/faculty/Mojca.jpeg" alt="Mojca Remskar">
+            </div>
+            <div class="faculty-details">
+                <h2>Mojca Remskar, MD, PhD, MACM</h2>
+                <p>Executive Vice Chair, Department of Anesthesiology</p>
+                <p>University of Minnesota</p>
+                <p>Minneapolis, USA</p>
+            </div>
+        </div>
+        
+        <div class="faculty-info">
+            <div class="faculty-photo">
+                <img src="photos/faculty/vanessa-moll.jpeg" alt="Vanessa Moll">
+            </div>
+            <div class="faculty-details">
+                <h2>Vanessa Moll, MD, PhD, FCCM, FASA, DESA</h2>
+                <p>Vice Chair Quality and Safety, Department of Anesthesiology</p>
+                <p>University of Minnesota</p>
+                <p>Minneapolis, USA</p>
+            </div>
+        </div>
+        
+        <div class="faculty-info">
+            <div class="faculty-photo">
+                <img src="photos/faculty/jake-hutchins.jpeg" alt="Jacob Hutchins">
+            </div>
+            <div class="faculty-details">
+                <h2>Jacob Hutchins, MD, MHA</h2>
+                <p>Division Director of Regional Anesthesia, Acute Pain, and Ambulatory Anesthesia</p>
+                <p>University of Minnesota</p>
+                <p>Minneapolis, USA</p>
+            </div>
+        </div>
+        
+        <div class="faculty-info">
+            <div class="faculty-photo">
+                <img src="photos/faculty/sam-eldabe.jpeg" alt="Sam Eldabe">
+            </div>
+            <div class="faculty-details">
+                <h2>Sam Eldabe, MD</h2>
+                <p>Department of Pain and Anaesthesia</p>
+                <p>James Cook University Hospital</p>
+                <p>Middlesbrough, England</p>
+            </div>
+        </div>
+        
+        <div class="faculty-info">
+            <div class="faculty-photo">
+                <img src="photos/faculty/DhruvB.jpeg" alt="Dhruv Bibra">
+            </div>
+            <div class="faculty-details">
+                <h2>Dhruv Bibra, MBBS, DA, DNB, FIPP, EDPM, FIPM</h2>
+                <p>Interventional Pain Physician</p>
+                <p>Delhi Pain Management Centre</p>
+                <p>South Delhi, India</p>
+            </div>
+        </div>
+        
+        <div class="faculty-info">
+            <div class="faculty-photo">
+                <img src="photos/faculty/AKM-Akhtaruzzaman.jpg" alt="AKM Akhtaruzzaman">
+            </div>
+            <div class="faculty-details">
+                <h2>Professor AKM Akhtaruzzaman</h2>
+                <p>Department of Anaesthesia, Analgesia and Intensive Care Medicine</p>
+                <p>Bangabandhu Sheikh Mujib Medical University</p>
+                <p>Dhaka, Bangladesh</p>
+            </div>
+        </div>
+        
+        <div class="faculty-info">
+            <div class="faculty-photo">
+                <img src="photos/faculty/clarence-shannon.jpeg" alt="Clarence Shannon">
+            </div>
+            <div class="faculty-details">
+                <h2>Clarence Shannon IV, MD</h2>
+                <p>Director of the Comprehensive Pain Clinic</p>
+                <p>University of Minnesota</p>
+                <p>Minneapolis, USA</p>
+            </div>
+        </div>
+</html>

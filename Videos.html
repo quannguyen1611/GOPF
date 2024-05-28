@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GlobalPainFellowship</title>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-wd9SddxKHW6q5WO3KCL5HpI8vaMG6CAdJzokWzoZBAe+MMydMRe2xLU3ElI4tNqB" crossorigin="anonymous">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body{
+                margin: 0;
+                font-family: 'Arial', sans-serif;
+                color:rgb(0, 0, 0);
+                width: 100%;
+            }
+            .whole {
+                padding-top: 0px;
+            }
+            /* Header and Navigation Bar */
+            .schoolHeader {
+                display: flex;
+                background-color: #972222;
+                height: 40px;
+                align-items: center;
+                justify-content: center;
+                color: #fcb900;
+                font-size: 18px; 
+            }
+            header {
+                display: flex;
+                background-color: white;
+                height: 100px;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0px 70px;
+            }
+            .logo {
+                width: 200px;
+                height: auto;
+            }
+            .nav a {
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                font-weight: 300;
+                font-size: 17px;
+            }
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+            .dropdown .dropbtn {
+                border: none;
+                outline: none;
+                padding: 14px 16px;
+                background-color: inherit;
+                margin: 0;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                border-radius: 10px;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            .dropdown-content button {
+                display: block;
+                width: 100%;
+                background-color: #f4f4f4;
+                color: black;
+                padding: 12px 16px;
+                text-align: left;
+                border: none;
+                text-decoration: none;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                border-bottom: 1px solid #ddd;
+            }
+            .dropdown-content button:hover {
+                background-color: #ddd;
+            }
+            .dropdown-content button a {
+                color: black;
+                text-decoration: none;
+                display: block;
+                width: 100%;
+            }
+            .nav a:hover, .dropdown:hover .dropbtn {
+                color: #f6782b;
+            }
+            /* Body */
+            .Testimonials {
+                background-color: #f4f4f4;
+                padding: 40px 70px; 
+                margin: 20px 70px; 
+                border-radius: 10px; 
+            }
+            .Testimonials h1 {
+                color: #1848C2; 
+                text-align: center; 
+                margin-bottom: 20px; 
+            }
+
+            .TestimonialsText1 {
+                color: #000; 
+                font-size: 18px; 
+                margin-bottom: 20px; 
+                text-align: justify; 
+                line-height: 1.6; 
+            }
+            .Graduates {
+                background-color: #f4f4f4;
+                padding: 40px 70px; 
+                margin: 20px 70px; 
+                border-radius: 10px; 
+            }
+            .Graduates h1 {
+                color: #1848C2; 
+                text-align: center; 
+                margin-bottom: 20px; 
+            }
+            .tab {
+                overflow: hidden;
+                background-color: #f1f1f1;
+                margin-top: 20px;
+                border-bottom: 2px solid #ccc;
+            }
+            .tab button {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+                border-right: 1px solid #ccc;
+                font-size: 17px;
+            }
+            .tab button:hover {
+                background-color: #ddd;
+            }
+            .tab button.active {
+                background-color: #ccc;
+            }
+            .graduation-content {
+                display: none;
+                padding: 6px 12px;
+                border: 1px solid #ccc;
+                border-top: none;
+            }
+        </style>
+    </head>
+    <body> 
+        <div style="background-color: rgb(255, 255, 255);" class="whole">
+        <!--Header and navigation bar-->
+        <div class = "schoolHeader">
+            <p >University of Minnesota</p>
+        </div>
+        <header>
+            <div>
+                <img src="photos/GOPFlogo.png" alt="Logo" class="logo">
+            </div>
+            <nav class="nav">
+                <div class="dropdown">
+                    <button class="dropbtn" id="homeButton"><a href="home.html" onclick="toHome()">Home</a></li></button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="Program.html" onclick="toProgram()">Program</a></li></button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="NewsAndEvents.html" onclick="toNewsAndEvents()">News & Events</a></li></button>
+                    <div class="dropdown-content">
+                        <button><a href="Testimonials.html">Testimonials</a></button>
+                        <button><a href="Graduates.html">Graduates</a></button>
+                        <button><a href="Videos.html">Videos</a></button>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="Faculty.html" onclick="toFaculty()">Faculty</a></li></button>
+                </div>
+            </nav>
+        </header>
+        <!-- Body -->
+        <div class="Graduations">
+            <div class="tab">
+                <button class="tablinks" onclick="openGraduation(event, 'graduation-23-24')" id="defaultOpen">Graduation 2023-2024</button>
+                <button class="tablinks" onclick="openGraduation(event, 'graduation-24-25')">Graduation 2024-2025</button>
+                <!-- Add more buttons for additional graduations -->
+            </div>
+
+            <!-- Graduation content -->
+            <div id="graduation-23-24" class="graduation-content">
+                <div class = "Video">
+                    <h1>Graduation Ceremony of 2023-2024 Fellows in <a href="https://en.wikipedia.org/wiki/Dhaka" target="_blank">Dhaka, Bangladesh</a></h1>
+                    <div class="graduation">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/gj80qx8a828?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div id="graduation-24-25" class="graduation-content" style="display:none">
+                <!-- Testimonials -->
+                <!-- List of graduates for 2024-2025 -->
+                <!-- Video for Graduation 2024-2025 -->
+            </div>
+            <!-- Add more additional graduations if needed -->
+        </div>
+        <script>
+            function openGraduation(evt, graduationName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("graduation-content");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(graduationName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            // Simulate a click on the "Graduation 2023-2024" tab when the page loads
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById("defaultOpen").click();
+            });
+        </script>
+    </div>
+</html>

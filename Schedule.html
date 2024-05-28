@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GlobalPainFellowship</title>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-wd9SddxKHW6q5WO3KCL5HpI8vaMG6CAdJzokWzoZBAe+MMydMRe2xLU3ElI4tNqB" crossorigin="anonymous">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body{
+                margin: 0;
+                font-family: 'Arial', sans-serif;
+                color:rgb(0, 0, 0);
+                width: 100%;
+            }
+            .whole {
+                padding-top: 0px;
+            }
+            /* Header and Navigation Bar */
+            .schoolHeader {
+                display: flex;
+                background-color: #972222;
+                height: 40px;
+                align-items: center;
+                justify-content: center;
+                color: #fcb900;
+                font-size: 18px; 
+            }
+            header{
+                display: flex;
+                background-color:white;
+                height: 100px;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0px 70px;
+            }
+            .logo{
+                width: 200px;
+                height: auto;
+            }
+            .nav a{
+                color:rgb(0, 0, 0);
+                text-decoration: none;
+                font-weight: 300;
+                font-size: 17px;
+            }
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+            .dropdown .dropbtn {
+                border: none;
+                outline: none;
+                padding: 14px 16px;
+                background-color: inherit;
+                margin: 0;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                border-radius: 10px;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #f1f1f1;
+            }
+            .nav a:hover,.dropdown:hover .dropbtn {
+                color: #f6782b;
+            }
+            /* Body */
+            .scheduleSection {
+            background-color: #f4f4f4;
+            padding: 20px 70px;
+            margin: 20px 70px;
+            border-radius: 10px;
+            }
+
+            .scheduleSection h2 {
+                color: #1848C2;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .scheduleSection h3 {
+                color: #1848C2;
+                margin-top: 20px;
+            }
+
+            .scheduleSection ul {
+                list-style: none;
+                padding: 0;
+                font-size: 18px;
+            }
+
+            .scheduleSection li {
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+
+            .scheduleSection p {
+                margin: 5px 0;
+                font-size: 16px;
+            }
+
+            .scheduleSection li:last-child {
+                border-bottom: none;
+            }
+        </style>
+    </head>
+    <body> 
+        <div style="background-color: rgb(255, 255, 255);" class="whole">
+        <!--Header and navigation bar-->
+        <div class = "schoolHeader">
+            <p >University of Minnesota</p>
+        </div>
+        <header>
+            <div>
+                <img src="photos/GOPFlogo.png" alt="Logo" class="logo">
+            </div>
+            <nav class="nav">
+                <div class="dropdown">
+                    <button class="dropbtn" id="homeButton"><a href="home.html" onclick="toHome()">Home</a></li></button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="Curriculum.html" onclick="toCurriculum()">Curriculum</a></li></button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn" style="text-decoration: underline;"><a href="Schedule.html" onclick="toSchedule()">Schedule</a></li></button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="NewsAndEvents.html" onclick="toNewsAndEvents()">News & Events</a></li></button>
+                    <div class="dropdown-content">
+                        <a href="#">Testimonials</a>
+                        <a href="#">Graduates</a>
+                        <a href="#">Video</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="Faculty.html" onclick="toFaculty()">Faculty</a></li></button>
+                </div>
+            </nav>
+        </header>
+        <!-- Body -->
+        <div class="scheduleSection">
+            <h2>Class Schedule</h2>
+            <ul>
+                <li>
+                    <h3>Session 1: March 9th, 2024</h3>
+                    <p>3-4pm GMT: Lecture</p>
+                    <p>4-4:30pm GMT: Quiz</p>
+                    <p>4:30-5pm GMT: Discussion on quiz answers</p>
+                </li>
+                <li>
+                    <h3>Session 2: April 13th, 2024</h3>
+                    <p>3-4pm GMT: Lecture</p>
+                    <p>4-4:30pm GMT: Quiz</p>
+                    <p>4:30-5pm GMT: Discussion on quiz answers</p>
+                </li>
+                <li>
+                    <h3>Session 3: May 4th, 2024</h3>
+                    <p>3-4pm GMT: Lecture</p>
+                    <p>4-4:30pm GMT: Quiz</p>
+                    <p>4:30-5pm GMT: Discussion on quiz answers</p>
+                </li>
+                <li>
+                    <h3>Session 4: June 1st, 2024</h3>
+                    <p>3-4pm GMT: Lecture</p>
+                    <p>4-4:30pm GMT: Quiz</p>
+                    <p>4:30-5pm GMT: Discussion on quiz answers</p>
+                </li>
+                <li>
+                    <h3>Session 5: July 6th, 2024</h3>
+                    <p>3-4pm GMT: Lecture</p>
+                    <p>4-4:30pm GMT: Quiz</p>
+                    <p>4:30-5pm GMT: Discussion on quiz answers</p>
+                </li>
+                <li>
+                    <h3>Session 6: September 2024 TBD</h3>
+                    <p>3-4pm GMT: Lecture</p>
+                    <p>4-4:30pm GMT: Quiz</p>
+                    <p>4:30-5pm GMT: Discussion on quiz answers</p>
+                </li>
+                <li>
+                    <h3>Session 7: October 2024 TBD</h3>
+                    <p>3-4pm GMT: Lecture</p>
+                    <p>4-4:30pm GMT: Quiz</p>
+                    <p>4:30-5pm GMT: Discussion on quiz answers</p>
+                </li>
+                <li>
+                    <h3>Session 8: November 2024 TBD</h3>
+                    <p>3-4pm GMT: Lecture</p>
+                    <p>4-4:30pm GMT: Quiz</p>
+                    <p>4:30-5pm GMT: Discussion on quiz answers</p>
+                </li>
+                <li>
+                    <h3>Session 9: December 2024 TBD</h3>
+                    <p>3-4pm GMT: Lecture</p>
+                    <p>4-4:30pm GMT: Quiz</p>
+                    <p>4:30-5pm GMT: Discussion on quiz answers</p>
+                </li>
+                <li>
+                    <h3>Session 10: January 2025 TBD</h3>
+                    <p>3-4pm GMT: Lecture</p>
+                    <p>4-4:30pm GMT: Quiz</p>
+                    <p>4:30-5pm GMT: Discussion on quiz answers</p>
+                </li>
+                <li>
+                    <h3>Session 11: February 2025 TBD</h3>
+                    <p>3-4pm GMT: Lecture</p>
+                    <p>4-4:30pm GMT: Quiz</p>
+                    <p>4:30-5pm GMT: Discussion on quiz answers</p>
+                </li>
+            </ul>
+        </div>
+</html>

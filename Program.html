@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GlobalPainFellowship</title>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-wd9SddxKHW6q5WO3KCL5HpI8vaMG6CAdJzokWzoZBAe+MMydMRe2xLU3ElI4tNqB" crossorigin="anonymous">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body{
+                margin: 0;
+                font-family: 'Arial', sans-serif;
+                color:rgb(0, 0, 0);
+                width: 100%;
+            }
+            .whole {
+                padding-top: 0px;
+            }
+            /* Header and Navigation Bar */
+            .schoolHeader {
+                display: flex;
+                background-color: #972222;
+                height: 40px;
+                align-items: center;
+                justify-content: center;
+                color: #fcb900;
+                font-size: 18px; 
+            }
+            header {
+                display: flex;
+                background-color: white;
+                height: 100px;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0px 70px;
+            }
+            .logo {
+                width: 200px;
+                height: auto;
+            }
+            .nav a {
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                font-weight: 300;
+                font-size: 17px;
+            }
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+            .dropdown .dropbtn {
+                border: none;
+                outline: none;
+                padding: 14px 16px;
+                background-color: inherit;
+                margin: 0;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                border-radius: 10px;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            .dropdown-content button {
+                display: block;
+                width: 100%;
+                background-color: #f4f4f4;
+                color: black;
+                padding: 12px 16px;
+                text-align: left;
+                border: none;
+                text-decoration: none;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                border-bottom: 1px solid #ddd;
+            }
+            .dropdown-content button:hover {
+                background-color: #ddd;
+            }
+            .dropdown-content button a {
+                color: black;
+                text-decoration: none;
+                display: block;
+                width: 100%;
+            }
+            .nav a:hover, .dropdown:hover .dropbtn {
+                color: #f6782b;
+            }
+            /* Body */
+            .curriculumSection {
+                background-color: #f4f4f4;
+                padding: 20px 70px;
+                margin: 20px 70px;
+                border-radius: 10px;
+            }
+            .curriculumSection h1 {
+                color: #1848C2;
+                text-align: center;
+            }
+            .curriculumSection h3 {
+                color: #1848C2;
+                text-align: left;
+            }
+            .curriculumSection ul {
+                list-style-type: circle;
+                margin-left: 20px;
+                font-size: 18px;
+            }
+            .ApplyLink {
+                background-color: #1848C2;
+                color: white;
+                padding: 10px 15px;
+                border-radius: 5px;
+                text-decoration: none;
+                display: inline-block;
+                margin-top: 10px;
+            }
+            .ApplyLink:hover {
+                background-color: #f6782b;
+            }
+            hr {
+                border: 0;
+                height: 1px;
+                margin: 20px 0;
+                background-color: black;
+                width: 100%;
+            }
+            .scheduleSection {
+                background-color: #f4f4f4;
+                padding: 20px 70px;
+                margin: 20px 70px;
+                border-radius: 10px;
+            }
+            .scheduleSection h1 {
+                color: #1848C2;
+                text-align: center;
+            }
+            .scheduleSection h3 {
+                color: #1848C2;
+            }
+            .scheduleSection ul {
+                list-style: none;
+                padding: 0;
+                font-size: 18px;
+            }
+            .scheduleSection li {
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+            .scheduleSection p {
+                margin: 5px 0;
+                font-size: 16px;
+            }
+            .scheduleSection li:last-child {
+                border-bottom: none;
+            }
+            .tab {
+                overflow: hidden;
+                background-color: #f1f1f1;
+                margin-top: 20px;
+                border-bottom: 2px solid #ccc;
+            }
+            .tab button {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+                border-right: 1px solid #ccc;
+                font-size: 17px;
+            }
+            .tab button:hover {
+                background-color: #ddd;
+            }
+            .tab button.active {
+                background-color: #ccc;
+            }
+            .Program-content {
+                display: none;
+                padding: 6px 12px;
+                border: 1px solid #ccc;
+                border-top: none;
+            }
+            .read-more-btn {
+                background-color: #1848C2;
+                color: white;
+                padding: 10px 15px;
+                border-radius: 5px;
+                text-decoration: none;
+                display: inline-block;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+            .read-more-btn:hover {
+                background-color: #f6782b;
+            }
+            .classSection {
+                background-color: #f4f4f4;
+                padding: 20px 70px;
+                margin: 20px 70px;
+                border-radius: 10px;
+            }
+            .classSection h1 {
+                color: #1848C2;
+                text-align: center;
+            }
+            .classSection p {
+                font-size: 18px;
+                line-height: 1.6;
+                text-align: justify;
+            }
+            .objectivesSection {
+                background-color: #f4f4f4;
+                padding: 20px 70px;
+                margin: 20px 70px;
+                border-radius: 10px;
+            }
+            .objectivesSection h1 {
+                color: #1848C2;
+                text-align: center;
+            }
+            .objectivesSection ul {
+                list-style-type: disc;
+                margin-left: 20px;
+                font-size: 18px;
+            }
+            .objectivesSection p {
+                font-size: 18px;
+                margin-top: 20px;
+            }
+            .objectivesSection a {
+                color: #1848C2;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .objectivesSection a:hover {
+                text-decoration: underline;
+            }
+            .objectivesSection img {
+                max-width: 150px;
+                margin-right: 20px;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body> 
+        <div style="background-color: rgb(255, 255, 255);" class="whole">
+        <!--Header and navigation bar-->
+        <div class = "schoolHeader">
+            <p >University of Minnesota</p>
+        </div>
+        <header>
+            <div>
+                <img src="photos/GOPFlogo.png" alt="Logo" class="logo">
+            </div>
+            <nav class="nav">
+                <div class="dropdown">
+                    <button class="dropbtn" id="homeButton"><a href="home.html" onclick="toHome()">Home</a></li></button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn" style="text-decoration: underline;"><a href="Program.html" onclick="toProgram()">Program</a></li></button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="NewsAndEvents.html" onclick="toNewsAndEvents()">News & Events</a></li></button>
+                    <div class="dropdown-content">
+                        <button><a href="Testimonials.html">Testimonials</a></button>
+                        <button><a href="Graduates.html">Graduates</a></button>
+                        <button><a href="Videos.html">Videos</a></button>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="Faculty.html" onclick="toFaculty()">Faculty</a></li></button>
+                </div>
+            </nav>
+        </header>
+        <!-- Body -->
+        <div class="Program">
+            <div class="tab">
+                <button class="tablinks" onclick="openProgram(event, 'Curriculum')" id="defaultOpen">Curriculum Overview</button>
+                <button class="tablinks" onclick="openProgram(event, 'Schedule')">Class Schedule</button>
+                <button class="tablinks" onclick="openProgram(event, 'Class')">Class Overview</button>
+                <button class="tablinks" onclick="openProgram(event, 'Objectives')">Objectives</button>
+                <!-- Add more buttons -->
+            </div>
+
+            <!-- Program content -->
+            <div id="Curriculum" class="Program-content">
+                <div class="curriculumSection">
+                    <h1>Curriculum Overview</h1>
+                    
+                    <h3>March 9th 2024: Regional Anesthesia 101</h3>
+                    <ul>
+                        <li>Basic Science: Principles of Ultrasound</li>
+                        <li>Basic Science: Local Anesthetics and Adjuvants for Nerve Blocks</li>
+                        <li>Acute Postoperative Pain: Patient-Controlled Analgesia</li>
+                        <li>Acute Postoperative Pain: Pediatric Regional Anesthesia</li>
+                    </ul>
+                    <a href="https://docs.google.com/presentation/d/1igfc93_FKeXfOAYyj8LJEFfO0MJt-UUQKckB8tFHQTQ/edit#slide=id.p" class="ApplyLink" target="_blank">Lecture link</a> | 
+                    <a href="Audio_LINK" class="ApplyLink" target="_blank">Audio link</a>
+        
+                    <hr>
+                    <h3>April 13th 2024: Regional Anesthesia 201</h3>
+                    <ul>
+                        <li>General Topics: Nerve Injury in Regional Anesthesia</li>
+                        <li>General Topics: Bier block</li>
+                        <li>General Topics: Local Anesthetic Systemic Toxicity</li>
+                        <li>General Topics: Post-Dural Puncture Headache</li>
+                    </ul>
+                    <a href="https://docs.google.com/presentation/d/1_ZS0TxFwLKkqH2pFlJaAElQsD-iefDnQUbXm898GgtQ/edit#slide=id.p" class="ApplyLink" target="_blank">Lecture link</a> | 
+                    <a href="Audio_LINK" class="ApplyLink" target="_blank">Audio link</a>
+        
+                    <hr>
+                    <h3>May 4th 2024: Regional Anesthesia 301</h3>
+                    <ul>
+                        <li>Neuraxial Block: Overview</li>
+                        <li>Neuraxial Block: Spine Anatomy; Epidural (Cervical, Thoracic, Lumbar, Caudal)</li>
+                        <li>Neuraxial Block: Epidural Adjuvants</li>
+                        <li>Neuraxial Block: Spinal and Combined Spinal Epidural</li>
+                        <li>Neuraxial Block: Cardiac, Pulmonary, GI, GU, Endocrine, and Metabolic Effects</li>
+                        <li>Neuraxial Block: ASRA Guidelines</li>
+                    </ul>
+                    <a href="https://docs.google.com/presentation/d/1_ZS0TxFwLKkqH2pFlJaAElQsD-iefDnQUbXm898GgtQ/edit#slide=id.p" class="ApplyLink" target="_blank">Lecture link</a> | 
+                    <a href="Audio_LINK" class="ApplyLink" target="_blank">Audio link</a>
+        
+                    <hr>
+                    <h3>June 1st 2024: Regional Anesthesia 401</h3>
+                    <ul>
+                        <li>Lower Extremity Blocks: Sciatic Nerve Block</li>
+                        <li>Lower Extremity Blocks: Femoral Nerve Block and Adductor Canal Block</li>
+                        <li>Lower Extremity Blocks: Lumbar Plexus Block and Obturator Nerve Block</li>
+                        <li>Lower Extremity Blocks: Popliteal Sciatic Block</li>
+                        <li>Lower Extremity Blocks: Ankle Block</li>
+                    </ul>
+                    <a href="https://docs.google.com/presentation/d/15NF3QyMZmQAx5dNmeL6Xoby_0rvFE1GAs4RjVPuhYYE/edit#slide=id.p" class="ApplyLink" target="_blank">Lecture link</a> | 
+                    <a href="Audio_LINK" class="ApplyLink" target="_blank">Audio link</a>
+        
+                    <hr>
+                    <h3>July 2024: Regional Anesthesia 501</h3>
+                    <ul>
+                        <li>Upper Extremity Blocks: Interscalene and Superior Trunk Block</li>
+                        <li>Upper Extremity Blocks: Supraclavicular Nerve Block</li>
+                        <li>Upper Extremity Blocks: Infraclavicular and Axillary Nerve Block</li>
+                        <li>Upper Extremity Blocks: Wrist Blocks: Ulnar, Radial, Median Nerve Block</li>
+                        <li>Upper Extremity Blocks: Suprascapular Nerve Block</li>
+                    </ul>
+                    <a href="LECTURE_LINK" class="ApplyLink" target="_blank">Lecture link</a> | 
+                    <a href="Audio_LINK" class="ApplyLink" target="_blank">Audio link</a>
+        
+                    <hr>
+                    <h3>August 2024: Regional Anesthesia 601</h3>
+                    <ul>
+                        <li>Trunk Block: Intercostal Nerve Block</li>
+                        <li>Trunk Block: Transversus Abdominis Plane Blocks</li>
+                        <li>Trunk Block: Thoracic Paravertebral Nerve Block</li>
+                        <li>Trunk Block: Ilioinguinal and Iliohypogastric Block</li>
+                        <li>Trunk Block: Erector Spinae Block</li>
+                        <li>Truncal Block: Pectoralis Nerve Block</li>
+                        <li>Head and Neck: Superficial Cervical Plexus block</li>
+                    </ul>
+                    <a href="https://docs.google.com/presentation/d/1lC9essyqaJj2lQiK445IzjbR9USA6dW5zYwtjreelV0/edit#slide=id.g24ef0af1f99_0_2" class="ApplyLink" target="_blank">Lecture link</a> | 
+                    <a href="Audio_LINK" class="ApplyLink" target="_blank">Audio link</a>
+        
+                    <hr>
+                    <h3>September 2024: Chronic pain 101</h3>
+                    <ul>
+                        <li>Basic Science: Pain Mechanisms and Pathways</li>
+                        <li>Basic Science: Opioid Receptors</li>
+                        <li>Basic Science: Social, Vocational, and Psychological Influences</li>
+                        <li>Basic Science: Gender and Age Differences in Pain Perception</li>
+                        <li>Basic Science: Pathophysiology of Acute and Chronic Pain</li>
+                        <li>Basic Science: Autonomic Nervous System Physiology</li>
+                    </ul>
+                    <a href="LECTURE_LINK" class="ApplyLink" target="_blank">Lecture link</a> | 
+                    <a href="Audio_LINK" class="ApplyLink" target="_blank">Audio link</a>
+        
+                    <hr>
+                    <h3>October 2024: Chronic pain 201</h3>
+                    <ul>
+                        <li>Noncancer Pain: Myofascial Pain Syndrome</li>
+                        <li>Noncancer Pain: Fibromyalgia</li>
+                        <li>Noncancer Pain: Facet Arthropathy and Axial Low Back and Neck Pain</li>
+                        <li>Noncancer Pain: Radiculopathy and Epidural Steroid Injections</li>
+                        <li>Noncancer Pain: Discogenic Low Back Pain</li>
+                    </ul>
+                    <a href="LECTURE_LINK" class="ApplyLink" target="_blank">Lecture link</a> | 
+                    <a href="Audio_LINK" class="ApplyLink" target="_blank">Audio link</a>
+        
+                    <hr>
+                    <h3>November 2024: Chronic pain 301</h3>
+                    <ul>
+                        <li>Craniofacial Pain: Headache and Botulinum Neurotoxins</li>
+                        <li>Craniofacial Pain: Supraorbital, Infraorbital, Auriculotemporal Nerve Block</li>
+                        <li>Craniofacial Pain: Trigeminal Neuralgia</li>
+                        <li>Craniofacial Pain: Occipital Neuralgia and Nerve Block</li>
+                        <li>Complex Regional Pain Syndrome</li>
+                    </ul>
+                    <a href="LECTURE_LINK" class="ApplyLink" target="_blank">Lecture link</a> | 
+                    <a href="Audio_LINK" class="ApplyLink" target="_blank">Audio link</a>
+        
+                    <hr>
+                    <h3>December 2024: Chronic pain 401</h3>
+                    <ul>
+                        <li>Sympathetic Blocks: Stellate Ganglion Block</li>
+                        <li>Sympathetic Blocks: Celiac Plexus Nerve Block and Neurolysis</li>
+                        <li>Sympathetic Blocks: Lumbar Sympathetic Block</li>
+                        <li>Sympathetic Blocks: Superior Hypogastric Block and Neurolysis</li>
+                        <li>Sympathetic Blocks: Ganglion Impar Block and Neurolysis</li>
+                    </ul>
+                    <a href="LECTURE_LINK" class="ApplyLink" target="_blank">Lecture link</a> | 
+                    <a href="Audio_LINK" class="ApplyLink" target="_blank">Audio link</a>
+        
+                    <hr>
+                    <h3>January 2025: Chronic pain 501</h3>
+                    <ul>
+                        <li>Neuropathic Pain: Postherpetic Neuralgia</li>
+                        <li>Neuropathic Pain: Phantom Limb Pain and Central Post-Stroke Pain</li>
+                        <li>Neuropathic Pain: Peripheral Neuropathies</li>
+                        <li>Neuropathic Pain: Genitofemoral Nerve Block</li>
+                        <li>Neuropathic Pain: Pudendal Nerve Block</li>
+                    </ul>
+                    <a href="LECTURE_LINK" class="ApplyLink" target="_blank">Lecture link</a> | 
+                    <a href="Audio_LINK" class="ApplyLink" target="_blank">Audio link</a>
+        
+                    <hr>
+                    <h3>February 2025: Chronic pain 601</h3>
+                    <ul>
+                        <li>Cancer Pain: Overview</li>
+                        <li>Neuroablation Techniques for Pain Management</li>
+                        <li>Transcutaneous Electrical Nerve Stimulation</li>
+                        <li>NSAIDs and Acetaminophen for Acute and Chronic Pain</li>
+                        <li>Antidepressants and Anticonvulsants for Neuropathic Pain</li>
+                        <li>Opioid Analgesics, Tolerance, Dependence and Addiction</li>
+                        <li>Equianalgesic Doses of Opioids</li>
+                    </ul>
+                    <a href="LECTURE_LINK" class="ApplyLink" target="_blank">Lecture link</a> | 
+                    <a href="Audio_LINK" class="ApplyLink" target="_blank">Audio link</a>
+                </div>
+            </div>
+
+            <div id="Schedule" class="Program-content" style="display:none">
+                <div class="scheduleSection">
+                    <h1>Class Schedule</h1>
+                    <h3 class="align-right">Session:</h3>
+                    <ul>
+                        <li>Session 1: March 9th, 2024</li>
+                        <li>Session 2: April 13th, 2024</li>
+                        <li>Session 3: May 4th, 2024</li>
+                        <li>Session 4: June 1st, 2024</li>
+                        <li>Session 5: July 6th, 2024</li>
+                        <li>Session 6: September 2024 TBD</li>
+                        <li>Session 7: October 2024 TBD</li>
+                        <li>Session 8: November 2024 TBD</li>
+                        <li>Session 9: December 2024 TBD</li>
+                        <li>Session 10: January 2025 TBD</li>
+                        <li>Session 11: February 2025 TBD</li>
+                    </ul>
+                    <h3 class="align-right">Each session:</h3>
+                    <ul>
+                        <li>3-4pm GMT: Lecture</li>
+                        <li>4-4:30pm GMT: Quiz</li>
+                        <li>4:30-5pm GMT: Discussion on quiz answers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="Class" class="Program-content" style="display:none">
+                <div class="classSection">
+                    <h1>Class Overview</h1>
+                    <p>
+                        This is a course designed for anesthesiology residents, fellows, or faculty, who are interested in 
+                        regional anesthesia and pain medicine. Through integrating traditional and new pedagogic methods, 
+                        this program will help you enhancing clinical skills while staying on top of the latest trends and 
+                        developments. Our learning model is comprised of live online lectures, live quiz, real time quiz 
+                        results, and quiz discussion. This 12-month program will cover key topics suggested by the ‘American 
+                        Board of Anesthesiology’ .The Interactive quiz will help review concepts and provide a deeper 
+                        understanding of the topics. Individual and team assignments on scientific writing will help you 
+                        position yourself for a successful, multifaceted career in pain medicine.
+                    </p>
+                </div>
+            </div>
+
+            <div id="Objectives" class="Program-content" style="display:none">
+                <div class="objectivesSection">
+                    <h1>Course Learning Objectives</h1>
+                    <ul>
+                        <li>Get a broad overview of regional anesthesia and pain medicine</li>
+                        <li>Understand how common block and/pain procedure are performed by reading texts and video clips</li>
+                        <li>Get prepared for in-training exam and board exam</li>
+                    </ul>
+                    <p><b>Required textbook</b>: Anesthesiology in-training exam review book</p>
+                    <div style="display: flex; align-items: start;">
+                        <img src="photos/AnesthesiologyTextbook.webp" style="width: 150px; margin-right: 20px;">
+                        <ul>
+                            <li><a href="https://link.springer.com/book/10.1007/978-3-030-87266-3" target="_blank">Springer link</a></li>
+                            <li><a href="https://www.amazon.com/Anesthesiology-In_Training-Exam-Review_-Regional-Anesthesia-and-Chronic-Pain/dp/3030872653/ref=sr_1_1?crid=3IOIHEAY67HHP&keywords=anesthesiology+in+training+exam+review&qid=1642445355&sprefix=anesthesiology+in+training+exam+review%2Caps%2C108&sr=8-1" target="_blank">Amazon link</a></li>
+                            <li><a href="https://books.google.com/books?id=K6deEAAAQBAJ&newbks=0&printsec=frontcover&pg=PR4&dq=in-training+banik&hl=en&source=newbks_fb#v=onepage&q=in-training%20banik&f=false" target="_blank">Googlebook preview</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more additional sections if needed -->
+        </div>
+        <script>
+            function openProgram(evt, Name) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("Program-content");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(Name).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            // Simulate a click on the "urriculum Overview" tab when the page loads
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById("defaultOpen").click();
+            });
+        </script>
+    </div>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GlobalPainFellowship</title>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-wd9SddxKHW6q5WO3KCL5HpI8vaMG6CAdJzokWzoZBAe+MMydMRe2xLU3ElI4tNqB" crossorigin="anonymous">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body{
+                margin: 0;
+                font-family: 'Arial', sans-serif;
+                color:rgb(0, 0, 0);
+                width: 100%;
+            }
+            .whole {
+                padding-top: 0px;
+            }
+            /* Header and Navigation Bar */
+            .schoolHeader {
+                display: flex;
+                background-color: #972222;
+                height: 40px;
+                align-items: center;
+                justify-content: center;
+                color: #fcb900;
+                font-size: 18px; 
+            }
+            header {
+                display: flex;
+                background-color: white;
+                height: 100px;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0px 70px;
+            }
+            .logo {
+                width: 200px;
+                height: auto;
+            }
+            .nav a {
+                color: rgb(0, 0, 0);
+                text-decoration: none;
+                font-weight: 300;
+                font-size: 17px;
+            }
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+            .dropdown .dropbtn {
+                border: none;
+                outline: none;
+                padding: 14px 16px;
+                background-color: inherit;
+                margin: 0;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 10;
+                border-radius: 10px;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            .dropdown-content button {
+                display: block;
+                width: 100%;
+                background-color: #f4f4f4;
+                color: black;
+                padding: 12px 16px;
+                text-align: left;
+                border: none;
+                text-decoration: none;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                border-bottom: 1px solid #ddd;
+            }
+            .dropdown-content button:hover {
+                background-color: #ddd;
+            }
+            .dropdown-content button a {
+                color: black;
+                text-decoration: none;
+                display: block;
+                width: 100%;
+            }
+            .nav a:hover, .dropdown:hover .dropbtn {
+                color: #f6782b;
+            }
+            /* Body */
+            .overview {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 500px;
+                margin: 0 70px;
+            }
+
+            .gloabPainText{
+                width: 350px;
+                
+            }
+
+            .WelcomeText{
+                font-size: 40px;
+            }
+
+            .ApplyButton .ApplyLink{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 90px;
+                height: 50px;
+                background-color: #1848C2;
+                text-decoration: none;
+                color: white;
+                border-radius: 10px; 
+                font-size: 20px; 
+            }
+
+            .ApplyButton:hover .ApplyLink:hover{
+                background-color: #f6782b; 
+            }
+
+            .slideshow-container {
+                width: 800px;
+                height: 450px;
+                margin-left: auto;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .slide {
+                position: absolute;
+                width: 800px;
+                height: 500px;
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
+                transform: translate(134px, -250px); /* Move right by 100px and up by 100px */
+            }
+
+            .slide img {
+                width: 100%;  
+                height: 100%; 
+                object-fit: cover; 
+                display: block;
+                border-radius: 10px;
+            }
+
+            .active {
+                opacity: 1;
+                z-index: 2; 
+            }
+
+            .Intro {
+                background-color: #f4f4f4;
+                padding: 40px 70px; 
+                margin: 20px 70px; 
+                border-radius: 10px; 
+            }
+            .Intro h1 {
+                color: #1848C2; 
+                text-align: center; 
+                margin-bottom: 20px; 
+            }
+
+            .IntroText1, .IntroText2 {
+                color: #000; 
+                font-size: 18px; 
+                margin-bottom: 20px; 
+                text-align: justify; 
+                line-height: 1.6; 
+            }
+            .classOverviewSection, .courseObjectivesSection {
+                background-color: #f4f4f4;
+                padding: 40px 70px;
+                margin: 20px 70px;
+                border-radius: 10px;
+            }
+
+            .classOverviewSection h1, .courseObjectivesSection h1 {
+                color: #1848C2;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .classOverviewSection p, .courseObjectivesSection ul, .courseObjectivesSection p {
+                color: #000;
+                font-size: 18px;
+                margin-bottom: 20px;
+                text-align: justify;
+                line-height: 1.6;
+            }
+
+            .courseObjectivesSection ul {
+                list-style-type: disc;
+                margin-left: 20px;
+            }
+            .Subscribe {
+                background-color: #f4f4f4;
+                padding: 40px 70px; 
+                margin: 20px 70px; 
+                border-radius: 10px; 
+            }
+            .Subscribe h1 {
+                color: #1848C2; 
+                text-align: center; 
+                margin-bottom: 20px; 
+            }
+
+            .SubText {
+                color: #000; 
+                font-size: 18px; 
+                margin-bottom: 20px; 
+                text-align: center; 
+                line-height: 1.6; 
+            }
+
+            .SubscribeForm form {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 20px;
+            }
+
+            .SubscribeForm input[type="email"] {
+                width: 300px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 18px;
+            }
+
+            .SubscribeForm button {
+                padding: 10px 20px;
+                background-color: #1848C2;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 18px;
+            }
+
+            .SubscribeForm button:hover {
+                background-color: #f6782b;
+            }
+            .contact-section {
+                background-color: #f4f4f4;
+                padding: 40px 20px;
+                margin: 20px 70px;
+                border-radius: 10px;
+            }
+            .contact-section h1 {
+                color: #1848C2;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .contact-section p {
+                color: #000;
+                font-size: 18px;
+                margin-bottom: 20px;
+                text-align: center;
+                line-height: 1.6;
+            }
+            .contact-form {
+                width: 100%;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            .contact-form input, .contact-form textarea, .contact-form button {
+                width: 100%;
+                padding: 10px;
+                margin: 5px 0;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 18px;
+            }
+            .contact-form button {
+                background-color: #1848C2;
+                color: white;
+                cursor: pointer;
+            }
+            .contact-form button:hover {
+                background-color: #f6782b;
+            }
+        </style>
+
+    </head>
+    <body> 
+        <div style="background-color: rgb(255, 255, 255);" class="whole">
+        <!--Header and navigation bar-->
+        <div class = "schoolHeader">
+            <p >University of Minnesota</p>
+        </div>
+        <header>
+            <div>
+                <img src="photos/GOPFlogo.png" alt="Logo" class="logo">
+            </div>
+            <nav class="nav">
+                <div class="dropdown">
+                    <button class="dropbtn" id="homeButton" style="text-decoration: underline;"><a href="home.html" onclick="toHome()">Home</a></li></button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="Program.html" onclick="toProgram()">Program</a></li></button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="NewsAndEvents.html" onclick="toNewsAndEvents()">News & Events</a></li></button>
+                    <div class="dropdown-content">
+                        <button><a href="Testimonials.html">Testimonials</a></button>
+                        <button><a href="Graduates.html">Graduates</a></button>
+                        <button><a href="Videos.html">Videos</a></button>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="Faculty.html" onclick="toFaculty()">Faculty</a></li></button>
+                </div>
+            </nav>
+        </header>
+        <!-- Body -->
+        <div class = "overview">
+            <div class="gloabPainText">
+                <p class="WelcomeText"><b>Welcome to <br> Global Online Pain Fellowship</b></p>
+                <div class="ApplyButton">
+                    <p class="ApplyText"><a href="https://docs.google.com/forms/d/1FyHmN015xAK90RN-nSO3MFIahYLpNRmCFfiWhP4R7UI/closedform#responses" onclick="toApply()" class="ApplyLink" target="_blank">Apply</a></p>
+                </div>
+            </div>
+            <div class="slideshowContainer">
+                <div class="slide active"><img src="photos/peoplestudying.jpg" alt="People Studying"></div>
+                <div class="slide"><img src="photos/GOPFinfo.png" alt="GOPF Info"></div>
+                <div class="slide"><img src="photos/worldmap.jpg" alt="World map"></div>
+            </div>
+        </div>
+        <div class = "Intro"> 
+            <p> <h1>About Us</h1>  </p>
+            <p class = "IntroText1">
+                Appropriate pain education is essential for successful pain management.  Limited knowledge, 
+                inadequate training of evidence based pain management, and insufficient resources are important 
+                barriers for good pain management in the low resource countries. In these counties, there is no 
+                structured pain fellowship exists. Therefore, there are significant variations in the quality and 
+                levels of pain care. 
+            </p>
+            <p class = "IntroText2">
+                A major shift in education in the past few years is the incorporation of video conferencing and other 
+                online learning methodologies. These changes open new opportunities for teachers and students. 
+                The goal of this 'Global Online Pain Fellowship' is to create a program to teach and train young 
+                anesthesiologists and test their knowledge and thought processes, through which relative uniformity 
+                of knowledge base and judgment are measured and certified for specialists . The Fellowship will 
+                involve a commitment of one year of training through a structured course curriculum, with monthly 
+                live lectures and live online examinations . Upon successful completion of course a certificate will
+                 be issued recognizing the satisfactory attendance (>80%), and passing the examinations (>70% score). 
+                 Such certification will ensure that the candidates have acquired an established global standard of 
+                 core knowledge, and matured their judgment process through live online lectures and successful 
+                 completion of all examinations. <span style="text-decoration: underline;">Candidates who show
+                 outstanding performance (>80% score) on the examination are granted the 'certificate with Honors'.</span> 
+                 The certificate with Honors may assist in advancement of their academic careers.
+            </p>
+        </div>
+        <!--
+        <div class="classOverviewSection">
+            <h1>Class Overview</h1>
+            <p>
+                This is a course designed for anesthesiology residents, fellows, or faculty, who are interested in 
+                regional anesthesia and pain medicine. Through integrating traditional and new pedagogic methods, 
+                this program will help you enhancing clinical skills while staying on top of the latest trends and 
+                developments. Our learning model is comprised of live online lectures, live quiz, real time quiz 
+                results, and quiz discussion. This 12-month program will cover key topics suggested by the ‘American 
+                Board of Anesthesiology’ .The Interactive quiz will help review concepts and provide a deeper 
+                understanding of the topics. Individual and team assignments on scientific writing will help you 
+                position yourself for a successful, multifaceted career in pain medicine.
+            </p>
+        </div>
+        
+        <div class="courseObjectivesSection">
+            <h1>Course Learning Objectives</h1>
+            <ul>
+                <li>Get a broad overview of regional anesthesia and pain medicine</li>
+                <li>Understand how common block and/pain procedure are performed by reading texts and video clips</li>
+                <li>Get prepared for in-training exam and board exam</li>
+            </ul>
+            <p><b>Required textbook</b>: Anesthesiology in-training exam review book</p>
+            <div style="display: flex; align-items: start;">
+                <img src="photos/AnesthesiologyTextbook.webp" style="width: 150px; margin-right: 20px;">
+                <ul>
+                    <li><a href="https://link.springer.com/book/10.1007/978-3-030-87266-3" target="_blank">Springer link</a></li>
+                    <li><a href="https://www.amazon.com/Anesthesiology-In_Training-Exam-Review_-Regional-Anesthesia-and-Chronic-Pain/dp/3030872653/ref=sr_1_1?crid=3IOIHEAY67HHP&keywords=anesthesiology+in+training+exam+review&qid=1642445355&sprefix=anesthesiology+in+training+exam+review%2Caps%2C108&sr=8-1" target="_blank">Amazon link</a></li>
+                    <li><a href="https://books.google.com/books?id=K6deEAAAQBAJ&newbks=0&printsec=frontcover&pg=PR4&dq=in-training+banik&hl=en&source=newbks_fb#v=onepage&q=in-training%20banik&f=false" target="_blank">Googlebook preview</a></li>
+                </ul>
+            </div>
+        </div>
+        -->
+        <div class = "Subscribe">
+            <p> <h1>Don't miss out</h1> </p>
+            <p class = "SubText">
+                Want to attend 1 of the individual lectures? Please submit this <a href="https://form.jotform.com/232111034088141" target="_blank">form</a>.<br> Lectures are on Saturdays 3-5pm GMT.
+            </p>
+            <!-- <div class="SubscribeForm">
+                <form action="YOUR_FORM_ACTION" method="POST">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit">Join</button>
+                </form>
+            </div> -->
+        </div>
+        <div class="contact-section">
+            <h1>Contact Us</h1>
+            <form action="https://formspree.io/f/moqgzbry" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    
+    </div>
+    <script>
+        var slides = document.querySelectorAll('.slide');
+        var currentSlide = 0;
+
+        function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide+1) % slides.length;
+        slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000); // Change slides every 5 seconds
+    </script>
+</html>
