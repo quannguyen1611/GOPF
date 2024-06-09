@@ -104,16 +104,13 @@
                 height: 500px;
                 margin: 0 70px;
             }
-
             .gloabPainText{
                 width: 350px;
                 
             }
-
             .WelcomeText{
                 font-size: 40px;
             }
-
             .ApplyButton .ApplyLink{
                 display: flex;
                 justify-content: center;
@@ -126,11 +123,9 @@
                 border-radius: 10px; 
                 font-size: 20px; 
             }
-
             .ApplyButton:hover .ApplyLink:hover{
                 background-color: #f6782b; 
             }
-
             .slideshow-container {
                 width: 800px;
                 height: 450px;
@@ -138,29 +133,26 @@
                 position: relative;
                 overflow: hidden;
             }
-
             .slide {
                 position: absolute;
                 width: 800px;
                 height: 500px;
                 opacity: 0;
                 transition: opacity 1s ease-in-out;
-                transform: translate(134px, -250px); /* Move right by 100px and up by 100px */
+                transform: translate(134px, -250px); /* Move right by 134px and up by 250px */
             }
-
             .slide img {
                 width: 100%;  
                 height: 100%; 
-                object-fit: cover; 
+                object-fit: contain;
                 display: block;
                 border-radius: 10px;
             }
-
             .active {
                 opacity: 1;
                 z-index: 2; 
             }
-
+            /* Introduction Section */
             .Intro {
                 background-color: #f4f4f4;
                 padding: 40px 70px; 
@@ -172,7 +164,6 @@
                 text-align: center; 
                 margin-bottom: 20px; 
             }
-
             .IntroText1, .IntroText2 {
                 color: #000; 
                 font-size: 18px; 
@@ -186,13 +177,11 @@
                 margin: 20px 70px;
                 border-radius: 10px;
             }
-
             .classOverviewSection h1, .courseObjectivesSection h1 {
                 color: #1848C2;
                 text-align: center;
                 margin-bottom: 20px;
             }
-
             .classOverviewSection p, .courseObjectivesSection ul, .courseObjectivesSection p {
                 color: #000;
                 font-size: 18px;
@@ -200,7 +189,6 @@
                 text-align: justify;
                 line-height: 1.6;
             }
-
             .courseObjectivesSection ul {
                 list-style-type: disc;
                 margin-left: 20px;
@@ -216,7 +204,6 @@
                 text-align: center; 
                 margin-bottom: 20px; 
             }
-
             .SubText {
                 color: #000; 
                 font-size: 18px; 
@@ -224,35 +211,7 @@
                 text-align: center; 
                 line-height: 1.6; 
             }
-
-            .SubscribeForm form {
-                display: flex;
-                justify-content: center;
-                gap: 10px;
-                margin-top: 20px;
-            }
-
-            .SubscribeForm input[type="email"] {
-                width: 300px;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                font-size: 18px;
-            }
-
-            .SubscribeForm button {
-                padding: 10px 20px;
-                background-color: #1848C2;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 18px;
-            }
-
-            .SubscribeForm button:hover {
-                background-color: #f6782b;
-            }
+            /* Contact Section */
             .contact-section {
                 background-color: #f4f4f4;
                 padding: 40px 20px;
@@ -364,39 +323,6 @@
                  The certificate with Honors may assist in advancement of their academic careers.
             </p>
         </div>
-        <!--
-        <div class="classOverviewSection">
-            <h1>Class Overview</h1>
-            <p>
-                This is a course designed for anesthesiology residents, fellows, or faculty, who are interested in 
-                regional anesthesia and pain medicine. Through integrating traditional and new pedagogic methods, 
-                this program will help you enhancing clinical skills while staying on top of the latest trends and 
-                developments. Our learning model is comprised of live online lectures, live quiz, real time quiz 
-                results, and quiz discussion. This 12-month program will cover key topics suggested by the ‘American 
-                Board of Anesthesiology’ .The Interactive quiz will help review concepts and provide a deeper 
-                understanding of the topics. Individual and team assignments on scientific writing will help you 
-                position yourself for a successful, multifaceted career in pain medicine.
-            </p>
-        </div>
-        
-        <div class="courseObjectivesSection">
-            <h1>Course Learning Objectives</h1>
-            <ul>
-                <li>Get a broad overview of regional anesthesia and pain medicine</li>
-                <li>Understand how common block and/pain procedure are performed by reading texts and video clips</li>
-                <li>Get prepared for in-training exam and board exam</li>
-            </ul>
-            <p><b>Required textbook</b>: Anesthesiology in-training exam review book</p>
-            <div style="display: flex; align-items: start;">
-                <img src="photos/AnesthesiologyTextbook.webp" style="width: 150px; margin-right: 20px;">
-                <ul>
-                    <li><a href="https://link.springer.com/book/10.1007/978-3-030-87266-3" target="_blank">Springer link</a></li>
-                    <li><a href="https://www.amazon.com/Anesthesiology-In_Training-Exam-Review_-Regional-Anesthesia-and-Chronic-Pain/dp/3030872653/ref=sr_1_1?crid=3IOIHEAY67HHP&keywords=anesthesiology+in+training+exam+review&qid=1642445355&sprefix=anesthesiology+in+training+exam+review%2Caps%2C108&sr=8-1" target="_blank">Amazon link</a></li>
-                    <li><a href="https://books.google.com/books?id=K6deEAAAQBAJ&newbks=0&printsec=frontcover&pg=PR4&dq=in-training+banik&hl=en&source=newbks_fb#v=onepage&q=in-training%20banik&f=false" target="_blank">Googlebook preview</a></li>
-                </ul>
-            </div>
-        </div>
-        -->
         <div class = "Subscribe">
             <p> <h1>Don't miss out</h1> </p>
             <p class = "SubText">
@@ -411,19 +337,20 @@
         </div>
         <div class="contact-section">
             <h1>Contact Us</h1>
-            <form action="https://formspree.io/f/moqgzbry" method="POST" class="contact-form">
+            <form action="https://www.jotform.com/build/241519322122142/publish/embed" method="POST" class="contact-form">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send</button>
             </form>
+            <script type="text/javascript" src="https://form.jotform.com/jsform/241519597602058"></script>
         </div>
     
     </div>
+    <!-- JavaScript for slideshow -->
     <script>
         var slides = document.querySelectorAll('.slide');
         var currentSlide = 0;
-
         function nextSlide() {
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide+1) % slides.length;

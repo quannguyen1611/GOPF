@@ -193,7 +193,7 @@
             <div class="tab">
                 <button class="tablinks" onclick="openGraduation(event, 'graduation-23-24')" id="defaultOpen">Graduation 2023-2024</button>
                 <button class="tablinks" onclick="openGraduation(event, 'graduation-24-25')">Graduation 2024-2025</button>
-                <!-- Add more buttons for additional graduations -->
+                <!-- Add more tabs for additional graduations -->
             </div>
 
             <!-- Graduation content -->
@@ -268,6 +268,7 @@
             </div>
             <!-- Add more additional graduations if needed -->
         </div>
+        <!-- JavaScript for opening tabs -->
         <script>
             function openGraduation(evt, graduationName) {
                 var i, tabcontent, tablinks;
@@ -282,7 +283,7 @@
                 document.getElementById(graduationName).style.display = "block";
                 evt.currentTarget.className += " active";
             }
-            // Simulate a click on the "Graduation 2023-2024" tab when the page loads
+            //Simulate a click on the "Graduation 2023-2024" tab when the page loads
             document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("defaultOpen").click();
             });
